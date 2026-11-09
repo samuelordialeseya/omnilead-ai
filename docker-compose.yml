@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    container_name: omnilead-api
+    ports:
+      - "8000:8000"
+    environment:
+      - MOCK_MODE=${MOCK_MODE:-true}
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - CONCURRENCY_LIMIT=${CONCURRENCY_LIMIT:-5}
+      - RATE_LIMIT_RPS=${RATE_LIMIT_RPS:-2.0}
+      - CRM_WEBHOOK_URL=${CRM_WEBHOOK_URL:-}
+      - SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL:-}
+      - DISCORD_WEBHOOK_URL=${DISCORD_WEBHOOK_URL:-}
+    volumes:
+      - ./output:/app/output
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

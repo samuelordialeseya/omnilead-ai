@@ -1,0 +1,50 @@
+[project]
+name = "omnilead-ai"
+version = "1.0.0"
+description = "Async B2B Lead Scraping, DNS Email Verification & Gemini AI Personalization Pipeline"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+keywords = ["lead-generation", "automation", "b2b", "ai", "web-scraping", "gemini"]
+authors = [{ name = "OmniLead-AI" }]
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "httpx>=0.27.0",
+    "beautifulsoup4>=4.12.0",
+    "dnspython>=2.6.0",
+    "google-genai>=2.30.1",
+    "pydantic>=2.9.0",
+    "pydantic-settings>=2.5.0",
+    "rich>=13.9.0",
+    "typer>=0.13.0",
+    "python-multipart>=0.0.12",
+    "aiofiles>=24.1.0",
+    "tenacity>=9.0.0",
+]
+
+[project.urls]
+Repository = "https://github.com/yourusername/omnilead-ai"
+
+[project.scripts]
+omnilead = "omnilead.cli.main_cli:app"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "pytest-asyncio>=0.24.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["omnilead"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
