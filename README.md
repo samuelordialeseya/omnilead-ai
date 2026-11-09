@@ -16,43 +16,16 @@ An enterprise-grade, production-ready lead enrichment pipeline engineered for le
 
 ---
 
-## 🎬 Video Showcase & Comparisons
-
-We provide two distinct screen recordings with synchronized studio AI voiceover and subtitles so you can choose the right format for your audience:
-
-### Video 2: 🔥 Executive Brag Showreel (Commercial Pitch & ROI Flex)
-*Focused on annual \$12K SaaS cost displacement, 180ms P95 latency, and senior architectural feats.*
+## 🎬 System Showcase & Executive Explainer
 
 <p align="center">
-  <img src="docs/assets/explainer_brag.gif" alt="OmniLead-AI Executive Brag Showreel with Voiceover & Telemetry" width="100%" />
+  <img src="docs/assets/explainer.gif" alt="OmniLead-AI Executive Showcase & Architecture Flow" width="100%" />
 </p>
 
-> 📺 **Watch Full HD MP4 with Audio Controls:** [`docs/assets/explainer_brag.mp4`](docs/assets/explainer_brag.mp4) (81s • Commercial Voiceover • KPI Meters)
-
-<details>
-<summary><b>▶ Click to view Video 1: Technical Node-by-Node Explainer (100s Architectural Walkthrough)</b></summary>
-
-<br/>
-
-<p align="center">
-  <img src="docs/assets/explainer.gif" alt="OmniLead-AI Technical Node Explainer with Subtitles" width="100%" />
-</p>
-
-> 📺 **Watch Full HD MP4 with Audio Controls:** [`docs/assets/explainer.mp4`](docs/assets/explainer.mp4) (100s • Step-by-Step Educational Voiceover)
-
-</details>
-
----
-
-### ⚖️ Video Comparison Guide
-
-| Dimension | Video 1: Technical Explainer (`explainer.mp4`) | Video 2: Executive Brag Showreel (`explainer_brag.mp4`) |
-|---|---|---|
-| **Pacing** | Moderate & educational (100s) | Fast, commercial & high-energy (81s) |
-| **Visual Focus** | Dual-pane topology graph + live CLI streaming | High-contrast cyber-dark layout + live KPI counters & metrics |
-| **Narration Style** | Instructional engineer walkthrough | Confident agency commercial pitch |
-| **Key Metric Highlighted** | Concurrency bounds, MX DNS syntax, queue states | **\$11,988/yr cost savings**, 180ms latency, 92% ICP fit |
-| **Best Audience** | Technical interviewers, code reviewers, lead developers | Agency founders, non-technical clients, sales directors |
+> 🎙️ **Full 81s HD Video with Studio Voiceover & Live Telemetry:** [`docs/assets/explainer.mp4`](docs/assets/explainer.mp4)  
+> *(Demonstrates the \$11.9K/yr cost displacement, sub-200ms async scraping, DNS MX deliverability verification, Gemini 3.8 Flash intelligence, and automated CRM webhooks.)*
+>
+> 🏆 **Full Benchmark Audit:** [Read the Executive Engineering Brag Document (BRAG.md)](BRAG.md)
 
 ---
 
