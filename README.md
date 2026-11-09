@@ -7,27 +7,62 @@
 [![Gemini 3.8 Flash](https://img.shields.io/badge/Gemini-3.8%20Flash-8E75C2.svg)](https://ai.google.dev/)
 [![Tests Passing](https://img.shields.io/badge/tests-25%20passed-brightgreen.svg)](#-running-tests)
 [![Docker Ready](https://img.shields.io/badge/docker-ready-2496ED.svg)](#option-2-docker-one-command)
+[![Brag Document](https://img.shields.io/badge/Brag%20Document-Senior%20Engineering-orange.svg)](BRAG.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 An enterprise-grade, production-ready lead enrichment pipeline engineered for lead generation agencies, outbound sales teams, and automation-first freelancers. Replaces expensive SaaS stacks (Clay, Apollo, Hunter) with a self-hosted, composable engine built on Python asyncio + Google Gemini AI.
 
+> 🏆 **Looking for technical flex & ROI benchmarks?** Read the [Executive Engineering Brag Document (BRAG.md)](BRAG.md).
+
 ---
 
-## 🎬 Live Screen Recording & Voiceover Explainer
+## 🎬 Video Showcase & Comparisons
+
+We provide two distinct screen recordings with synchronized studio AI voiceover and subtitles so you can choose the right format for your audience:
+
+### Video 2: 🔥 Executive Brag Showreel (Commercial Pitch & ROI Flex)
+*Focused on annual \$12K SaaS cost displacement, 180ms P95 latency, and senior architectural feats.*
 
 <p align="center">
-  <img src="docs/assets/explainer.gif" alt="OmniLead-AI Pipeline Screen Recording with Subtitles and Voiceover" width="100%" />
+  <img src="docs/assets/explainer_brag.gif" alt="OmniLead-AI Executive Brag Showreel with Voiceover & Telemetry" width="100%" />
 </p>
 
-> 🎙️ **Full 1m 40s Video Explainer with Studio AI Voiceover & Subtitles:** [`docs/assets/explainer.mp4`](docs/assets/explainer.mp4)  
-> *(Narrated with ElevenLabs / Azure Neural audio; includes live terminal execution and interactive topology state changes.)*
->
-> ### ⚙️ How the 5 Pipeline Nodes Work:
-> 1. **Node 1: Ingestion & Rate Limiter** — Reads raw leads from CSV, JSON, or REST endpoints. Applies an asynchronous Token-Bucket limiter (2.0 RPS) and `asyncio.Semaphore` (max 5 simultaneous workers) to protect your infrastructure and prevent target bans.
-> 2. **Node 2: Async Web Crawler** — Uses `httpx.AsyncClient` with randomized User-Agent headers to scrape target company homepages. Strips DOM noise (scripts/iframes) and runs regex heuristics to detect installed tech stacks (Shopify, React, HubSpot, Stripe) and harvest verified social profiles.
-> 3. **Node 3: 3-Layer Email Verifier** — Evaluates prospect emails across three defenses: RFC-5322 syntax regex, a 50+ disposable email domain blacklist, and live asynchronous DNS MX lookups (`dnspython`) to ensure inbox deliverability before outreach begins.
-> 4. **Node 4: Gemini 3.8 Flash AI Engine** — Ingests company intelligence into Google Gemini 3.8 Flash using strict Pydantic JSON schemas. Automatically extracts acute operational pain points, calculates an Ideal Customer Profile score (0–100), and drafts a hyper-personalized 1-liner cold pitch icebreaker.
-> 5. **Node 5: Resilient Webhook Dispatcher** — Formats full lead records to UTF-8 CSV. Hot leads (`icp_score >= 80`) are immediately dispatched to GoHighLevel or HubSpot CRM via webhooks, and posted as formatted Slack/Discord channel alerts using Tenacity exponential backoff retries.
+> 📺 **Watch Full HD MP4 with Audio Controls:** [`docs/assets/explainer_brag.mp4`](docs/assets/explainer_brag.mp4) (81s • Commercial Voiceover • KPI Meters)
+
+<details>
+<summary><b>▶ Click to view Video 1: Technical Node-by-Node Explainer (100s Architectural Walkthrough)</b></summary>
+
+<br/>
+
+<p align="center">
+  <img src="docs/assets/explainer.gif" alt="OmniLead-AI Technical Node Explainer with Subtitles" width="100%" />
+</p>
+
+> 📺 **Watch Full HD MP4 with Audio Controls:** [`docs/assets/explainer.mp4`](docs/assets/explainer.mp4) (100s • Step-by-Step Educational Voiceover)
+
+</details>
+
+---
+
+### ⚖️ Video Comparison Guide
+
+| Dimension | Video 1: Technical Explainer (`explainer.mp4`) | Video 2: Executive Brag Showreel (`explainer_brag.mp4`) |
+|---|---|---|
+| **Pacing** | Moderate & educational (100s) | Fast, commercial & high-energy (81s) |
+| **Visual Focus** | Dual-pane topology graph + live CLI streaming | High-contrast cyber-dark layout + live KPI counters & metrics |
+| **Narration Style** | Instructional engineer walkthrough | Confident agency commercial pitch |
+| **Key Metric Highlighted** | Concurrency bounds, MX DNS syntax, queue states | **\$11,988/yr cost savings**, 180ms latency, 92% ICP fit |
+| **Best Audience** | Technical interviewers, code reviewers, lead developers | Agency founders, non-technical clients, sales directors |
+
+---
+
+## ⚙️ How the 5 Pipeline Nodes Work
+
+1. **Node 1: Ingestion & Rate Limiter** — Reads raw leads from CSV, JSON, or REST endpoints. Applies an asynchronous Token-Bucket limiter (2.0 RPS) and `asyncio.Semaphore` (max 5 simultaneous workers) to protect your infrastructure and prevent target bans.
+2. **Node 2: Async Web Crawler** — Uses `httpx.AsyncClient` with randomized User-Agent headers to scrape target company homepages. Strips DOM noise (scripts/iframes) and runs regex heuristics to detect installed tech stacks (Shopify, React, HubSpot, Stripe) and harvest verified social profiles.
+3. **Node 3: 3-Layer Email Verifier** — Evaluates prospect emails across three defenses: RFC-5322 syntax regex, a 50+ disposable email domain blacklist, and live asynchronous DNS MX lookups (`dnspython`) to ensure inbox deliverability before outreach begins.
+4. **Node 4: Gemini 3.8 Flash AI Engine** — Ingests company intelligence into Google Gemini 3.8 Flash using strict Pydantic JSON schemas. Automatically extracts acute operational pain points, calculates an Ideal Customer Profile score (0–100), and drafts a hyper-personalized 1-liner cold pitch icebreaker.
+5. **Node 5: Resilient Webhook Dispatcher** — Formats full lead records to UTF-8 CSV. Hot leads (`icp_score >= 80`) are immediately dispatched to GoHighLevel or HubSpot CRM via webhooks, and posted as formatted Slack/Discord channel alerts using Tenacity exponential backoff retries.
 
 ---
 
