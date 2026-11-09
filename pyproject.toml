@@ -24,7 +24,7 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/yourusername/omnilead-ai"
+Repository = "https://github.com/samuelordialeseya/omnilead-ai"
 
 [project.scripts]
 omnilead = "omnilead.cli.main_cli:app"

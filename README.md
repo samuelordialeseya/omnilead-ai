@@ -2,7 +2,31 @@
 
 > **Async B2B Lead Scraping · DNS Email Verification · Gemini AI Personalization · CRM Dispatch**
 
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688.svg)](https://fastapi.tiangolo.com)
+[![Gemini 3.8 Flash](https://img.shields.io/badge/Gemini-3.8%20Flash-8E75C2.svg)](https://ai.google.dev/)
+[![Tests Passing](https://img.shields.io/badge/tests-25%20passed-brightgreen.svg)](#-running-tests)
+[![Docker Ready](https://img.shields.io/badge/docker-ready-2496ED.svg)](#option-2-docker-one-command)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 An enterprise-grade, production-ready lead enrichment pipeline engineered for lead generation agencies, outbound sales teams, and automation-first freelancers. Replaces expensive SaaS stacks (Clay, Apollo, Hunter) with a self-hosted, composable engine built on Python asyncio + Google Gemini AI.
+
+---
+
+## 🎬 Architecture & Execution Flow (Video Explainer)
+
+<p align="center">
+  <img src="docs/assets/explainer.gif" alt="OmniLead-AI Pipeline Architecture & Node Flow with Subtitles" width="100%" />
+</p>
+
+> 📺 **Watch full 720p HD MP4 with audio/video controls:** [`docs/assets/explainer.mp4`](docs/assets/explainer.mp4)
+>
+> ### ⚙️ How the 5 Pipeline Nodes Work:
+> 1. **Node 1: Ingestion & Rate Limiter** — Reads CSV/JSON/API payloads. Uses an asynchronous token-bucket limiter and `asyncio.Semaphore` to bound concurrency and prevent IP bans.
+> 2. **Node 2: Async Web Crawler** — Fetches target homepages using `httpx.AsyncClient` with randomized User-Agents; cleans DOM text, detects tech stacks (Shopify, React, HubSpot, Stripe), and harvests social profiles.
+> 3. **Node 3: 3-Layer Email Verifier** — Validates RFC-5322 syntax, screens against 50+ disposable email domains, and runs live async DNS MX lookups (`dnspython`) to guarantee inbox deliverability.
+> 4. **Node 4: Gemini 3.8 Flash AI Engine** — Analyzes company data with strict Pydantic JSON schema formatting, generating acute pain points, ICP match scores (0–100), and hyper-personalized cold outreach icebreakers.
+> 5. **Node 5: Resilient Webhook Dispatcher** — Streams hot leads (`icp_score >= 80`) to GoHighLevel/HubSpot CRMs via webhooks and fires formatted Slack/Discord notifications with exponential backoff retries.
 
 ---
 
@@ -59,7 +83,7 @@ flowchart TD
 
 ```bash
 # 1. Clone
-git clone https://github.com/yourusername/omnilead-ai.git
+git clone https://github.com/samuelordialeseya/omnilead-ai.git
 cd omnilead-ai
 
 # 2. Install
