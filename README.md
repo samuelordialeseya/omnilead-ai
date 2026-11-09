@@ -13,20 +13,21 @@ An enterprise-grade, production-ready lead enrichment pipeline engineered for le
 
 ---
 
-## 🎬 Architecture & Execution Flow (Video Explainer)
+## 🎬 Live Screen Recording & Voiceover Explainer
 
 <p align="center">
-  <img src="docs/assets/explainer.gif" alt="OmniLead-AI Pipeline Architecture & Node Flow with Subtitles" width="100%" />
+  <img src="docs/assets/explainer.gif" alt="OmniLead-AI Pipeline Screen Recording with Subtitles and Voiceover" width="100%" />
 </p>
 
-> 📺 **Watch full 720p HD MP4 with audio/video controls:** [`docs/assets/explainer.mp4`](docs/assets/explainer.mp4)
+> 🎙️ **Full 1m 40s Video Explainer with Studio AI Voiceover & Subtitles:** [`docs/assets/explainer.mp4`](docs/assets/explainer.mp4)  
+> *(Narrated with ElevenLabs / Azure Neural audio; includes live terminal execution and interactive topology state changes.)*
 >
 > ### ⚙️ How the 5 Pipeline Nodes Work:
-> 1. **Node 1: Ingestion & Rate Limiter** — Reads CSV/JSON/API payloads. Uses an asynchronous token-bucket limiter and `asyncio.Semaphore` to bound concurrency and prevent IP bans.
-> 2. **Node 2: Async Web Crawler** — Fetches target homepages using `httpx.AsyncClient` with randomized User-Agents; cleans DOM text, detects tech stacks (Shopify, React, HubSpot, Stripe), and harvests social profiles.
-> 3. **Node 3: 3-Layer Email Verifier** — Validates RFC-5322 syntax, screens against 50+ disposable email domains, and runs live async DNS MX lookups (`dnspython`) to guarantee inbox deliverability.
-> 4. **Node 4: Gemini 3.8 Flash AI Engine** — Analyzes company data with strict Pydantic JSON schema formatting, generating acute pain points, ICP match scores (0–100), and hyper-personalized cold outreach icebreakers.
-> 5. **Node 5: Resilient Webhook Dispatcher** — Streams hot leads (`icp_score >= 80`) to GoHighLevel/HubSpot CRMs via webhooks and fires formatted Slack/Discord notifications with exponential backoff retries.
+> 1. **Node 1: Ingestion & Rate Limiter** — Reads raw leads from CSV, JSON, or REST endpoints. Applies an asynchronous Token-Bucket limiter (2.0 RPS) and `asyncio.Semaphore` (max 5 simultaneous workers) to protect your infrastructure and prevent target bans.
+> 2. **Node 2: Async Web Crawler** — Uses `httpx.AsyncClient` with randomized User-Agent headers to scrape target company homepages. Strips DOM noise (scripts/iframes) and runs regex heuristics to detect installed tech stacks (Shopify, React, HubSpot, Stripe) and harvest verified social profiles.
+> 3. **Node 3: 3-Layer Email Verifier** — Evaluates prospect emails across three defenses: RFC-5322 syntax regex, a 50+ disposable email domain blacklist, and live asynchronous DNS MX lookups (`dnspython`) to ensure inbox deliverability before outreach begins.
+> 4. **Node 4: Gemini 3.8 Flash AI Engine** — Ingests company intelligence into Google Gemini 3.8 Flash using strict Pydantic JSON schemas. Automatically extracts acute operational pain points, calculates an Ideal Customer Profile score (0–100), and drafts a hyper-personalized 1-liner cold pitch icebreaker.
+> 5. **Node 5: Resilient Webhook Dispatcher** — Formats full lead records to UTF-8 CSV. Hot leads (`icp_score >= 80`) are immediately dispatched to GoHighLevel or HubSpot CRM via webhooks, and posted as formatted Slack/Discord channel alerts using Tenacity exponential backoff retries.
 
 ---
 

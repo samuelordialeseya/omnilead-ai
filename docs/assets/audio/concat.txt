@@ -1,0 +1,5 @@
+file 'C:/Users/laptop ni sam/.gemini/antigravity/scratch/omnilead-ai/docs/assets/audio/node_1.mp3'
+file 'C:/Users/laptop ni sam/.gemini/antigravity/scratch/omnilead-ai/docs/assets/audio/node_2.mp3'
+file 'C:/Users/laptop ni sam/.gemini/antigravity/scratch/omnilead-ai/docs/assets/audio/node_3.mp3'
+file 'C:/Users/laptop ni sam/.gemini/antigravity/scratch/omnilead-ai/docs/assets/audio/node_4.mp3'
+file 'C:/Users/laptop ni sam/.gemini/antigravity/scratch/omnilead-ai/docs/assets/audio/node_5.mp3'
